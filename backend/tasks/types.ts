@@ -26,11 +26,12 @@ export namespace taskModel {
     }
 
     export type task = {
+        _id: string
         title: string,
         description: string,
         status: 'pending' | 'in-progress' | 'completed',
         priority: 'low' | 'medium' | 'high'
-        createdAt: Date
+        createdAt?: Date
     }
 
 }

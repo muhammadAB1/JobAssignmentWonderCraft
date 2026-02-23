@@ -29,7 +29,7 @@ export const createTask = async (req: Request, res: Response) => {
 
 export const getTask = async (req: Request, res: Response) => {
     try {
-        const { status }: taskModel.getFilterTask = req.params as taskModel.getFilterTask
+        const { status }: taskModel.getFilterTask = req.query as taskModel.getFilterTask
 
         if (status) {
             const data = await db.task.find({
@@ -38,6 +38,7 @@ export const getTask = async (req: Request, res: Response) => {
             })
             return res.status(200).json(
                 data.map((data): taskModel.task => ({
+                    _id: data._id.toString(),
                     title: data.title,
                     createdAt: data.createdAt,
                     description: data.description,
@@ -50,6 +51,7 @@ export const getTask = async (req: Request, res: Response) => {
         const data = await db.task.find();
         return res.status(200).json(
             data.map((data): taskModel.task => ({
+                _id: data._id.toString(),
                 title: data.title,
                 createdAt: data.createdAt,
                 description: data.description,
