@@ -21,7 +21,7 @@ MONGODB_URL=mongodb+srv://.....
 ```
 
 ## 🚀 Tech Stack
-Frontend: React + TypeScript + tailwindscss
+Frontend: React + TypeScript + tailwindscss  
 Backend: Node.js + Express + TypeScript + mongoDB 
 
 ## 📌 Type Safety
