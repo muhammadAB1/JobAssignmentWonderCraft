@@ -30,6 +30,7 @@ All request and response types are strictly defined.
 👉 For reviewing all backend types, check:
 ```bash
 backend/tasks/types.ts
+frontend/types.ts
 ```
 
 ## ✨ Features
