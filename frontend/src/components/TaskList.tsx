@@ -59,15 +59,7 @@ export default function TaskList() {
     return (
         <>
             <style>{`
-        @keyframes fadeSlideIn {
-          from { opacity: 0; transform: translateY(8px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes slideUp {
-          from { opacity: 0; transform: translateY(16px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
+
         .filter-btn {
           all: unset; cursor: pointer;
           font-family: Geist Mono, ui-monospace, monospace;
@@ -87,9 +79,8 @@ export default function TaskList() {
           color: var(--muted-foreground); background: transparent;
           border: 1px solid var(--border); white-space: nowrap;
         }
-        .priority-btn.active-medium { background: rgba(251,203,151,0.15); color: #d87943; border-color: rgba(216,121,67,0.3); }
-        .priority-btn.active-high { background: rgba(231,138,83,0.12); color: #e78a53; border-color: rgba(231,138,83,0.3); }
-        .priority-btn.active-all { background: var(--muted); color: var(--foreground); border-color: var(--border); }
+        .priority-btn.active{ background: rgba(251,203,151,0.15); color: #d87943; border-color: rgba(216,121,67,0.3); }
+       
         .search-input { font-family: Geist Mono, ui-monospace, monospace; }
         .search-input::placeholder { color: var(--muted-foreground); opacity: 0.6; }
         .search-input:focus { outline: none; }
@@ -165,8 +156,8 @@ export default function TaskList() {
                         </div>
                         <div style={{ display: "flex", gap: "6px" }}>
                             {["all", "low", "medium", "high"].map((p) => (
-                                <button key={p} className={`priority-btn ${priorityFilter === p ? `active-${p}` : ""}`} onClick={() => setPriorityFilter(p)}>
-                                    {p === "all" ? "All" : p}
+                                <button key={p} className={`priority-btn ${priorityFilter === p ? `active` : ""}`} onClick={() => setPriorityFilter(p)}>
+                                    {p}
                                 </button>
                             ))}
                         </div>
