@@ -10,8 +10,9 @@ bun index.ts
 
 ### StartFrontend
 ```bash
+/frontend
 bun install
-/frontend bun run dev
+bun run dev
 ```
 
 ### .env file(backend)
