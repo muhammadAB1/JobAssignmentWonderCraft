@@ -39,7 +39,7 @@ export default function TaskList() {
 
     useEffect(() => {
         apis();
-    }, [filter, tasks])
+    }, [setTasks])
 
 
 
@@ -49,9 +49,10 @@ export default function TaskList() {
 
 
     const filtered = tasks.filter((t) => {
+        const statusMatch = filter === 'all' || t.status === filter
         const priorityMatch = priorityFilter === "all" || t.priority === priorityFilter;
         const searchMatch = !search.trim() || t.title.toLowerCase().includes(search.toLowerCase());
-        return priorityMatch && searchMatch;
+        return statusMatch && priorityMatch && searchMatch;
     });
 
 
